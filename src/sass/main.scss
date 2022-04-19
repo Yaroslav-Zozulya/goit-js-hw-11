@@ -1,12 +1,16 @@
 /*
+* BASE
+*/
+@import './base/reset';
+
+/*
 * COMPONENTS
 */
-
 @import './components/container';
 @import './components/search-form';
 
 /*
 * LAYOUT
 */
-
 @import './layout/header';
+@import './layout/gallery';
