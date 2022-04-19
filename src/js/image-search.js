@@ -4,6 +4,8 @@ import { renderImages } from './render-images';
 import { pagination } from './pagination';
 import { paginationInit } from './pagination-init';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 refs.form.addEventListener('submit', renderGalleryInterface);
 refs.loadMoreBtn.addEventListener('click', pagination);
@@ -21,6 +23,10 @@ async function renderGalleryInterface() {
       return;
     }
     renderImages(data.hits);
+    let lightbox = new SimpleLightbox('.gallery div', {
+      captionsData: 'alt',
+      captionDelay: 300,
+    });
     Notify.success('Pictures found');
     paginationInit(data);
   } catch {

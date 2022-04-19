@@ -2,6 +2,9 @@ import { refs } from './get-refs';
 import { renderMoreImages } from './pagination-render';
 import { paginationInit } from './pagination-init';
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const axios = require('axios');
 
 let page = 1;
@@ -22,4 +25,8 @@ export async function pagination() {
   if (page === totalPages) {
     refs.loadMoreBtn.classList.add('is-hidden');
   }
+  let lightbox = new SimpleLightbox('.gallery div', {
+    captionsData: 'alt',
+    captionDelay: 300,
+  });
 }

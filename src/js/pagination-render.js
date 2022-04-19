@@ -11,7 +11,7 @@ export function renderMoreImages(moreImages) {
         views,
         comments,
         downloads,
-      }) => `<div class="photo-card">
+      }) => `<div class="photo-card"  href="${largeImageURL}">
   <img src="${webformatURL}" alt="${tags}" loading="lazy" />
   <div class="info">
     <p class="info-item">
