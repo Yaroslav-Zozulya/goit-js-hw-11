@@ -1,9 +1,8 @@
 import { refs } from './get-refs';
 import { renderMoreImages } from './pagination-render';
 import { paginationInit } from './pagination-init';
-
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import { resetLightBox } from './lightbox';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const axios = require('axios');
 
@@ -22,11 +21,10 @@ export async function pagination() {
   renderMoreImages(data.hits);
 
   let totalPages = paginationInit(data);
+
+  resetLightBox();
   if (page === totalPages) {
     refs.loadMoreBtn.classList.add('is-hidden');
+    Notify.success(`All images loaded!`);
   }
-  let lightbox = new SimpleLightbox('.gallery div', {
-    captionsData: 'alt',
-    captionDelay: 300,
-  });
 }
