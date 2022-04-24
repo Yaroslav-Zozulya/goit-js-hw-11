@@ -12,6 +12,8 @@
 .photo-card {
   -webkit-box-shadow: 0 3px 3px 1px rgba(95, 114, 226, 1);
   box-shadow: 0 3px 3px 1px rgba(95, 114, 226, 1);
+  text-decoration: none;
+  color: #000;
 
   @media screen and (min-width: 768px) {
     flex-basis: calc(100% / 2 - 30px);

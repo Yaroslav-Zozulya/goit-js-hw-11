@@ -11,7 +11,7 @@ export function renderMoreImages(moreImages) {
         views,
         comments,
         downloads,
-      }) => `<div class="photo-card"  href="${largeImageURL}">
+      }) => `<a   href="${largeImageURL}"  class="photo-card"><div>
   <img src="${webformatURL}" alt="${tags}" loading="lazy" />
   <div class="info">
     <p class="info-item">
@@ -31,7 +31,7 @@ export function renderMoreImages(moreImages) {
       <span class="info-item-number">${downloads}</span>
     </p>
   </div>
-</div>`,
+</div></a>`,
     )
     .join(' ');
   refs.gallery.insertAdjacentHTML('beforeend', markup);
